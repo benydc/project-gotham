@@ -9,10 +9,13 @@ RUN apk add --update tzdata nodejs yarn shared-mime-info
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
+
 ADD Gemfile ./Gemfile
 RUN gem install bundler
+
 ADD Gemfile.lock ./Gemfile.lock
 RUN bundle install --jobs=4 --without development test
+
 ADD . /usr/src/app
 
 RUN yarn install --check-files
