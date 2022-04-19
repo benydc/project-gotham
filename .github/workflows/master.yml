@@ -24,6 +24,9 @@ jobs:
         with:
           node-version: '14'
 
+      - run: |
+          yarn install node-sass --unsafe-perms
+
       - uses: borales/actions-yarn@v2.3.0
         with:
           cmd: install # will run `yarn install` command
