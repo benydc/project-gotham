@@ -3,9 +3,9 @@ RUN apk add alpine-sdk libpq postgresql-dev \
     libc6-compat git gcc make cmake libc-dev \
     linux-headers bash wget libc6-compat \
     autoconf automake libtool curl make g++ \
-    unzip tzinfo-data
+    unzip
 
-RUN apk add --update nodejs yarn shared-mime-info
+RUN apk add --update tzdata nodejs yarn shared-mime-info
 
 RUN mkdir /usr/src/app
 WORKDIR /usr/src/app
