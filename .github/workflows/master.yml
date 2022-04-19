@@ -21,9 +21,11 @@ jobs:
           bundler-cache: true # runs 'bundle install' and caches installed gems automatically
 
       - env:
+          RAILS_ENV: production
+          RAKE_ENV: production
           RAILS_MASTER_KEY: ${{ SECRETS.RAILS_MASTER_KEY }}
         run: |
-          RAILS_ENV=production rails assets:precompile
+          bundle exec rails assets:precompile
 
       - run: |
           docker build . -t wpdacr.azurecr.io/project-gotham:${{ github.sha }}
