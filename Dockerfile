@@ -15,6 +15,7 @@ ENV RAKE_ENV=production
 
 ADD Gemfile ./Gemfile
 RUN gem install bundler
+ADD vendor ./vendor
 
 ADD Gemfile.lock ./Gemfile.lock
 RUN bundle install --jobs=4 --deployment --without development test
