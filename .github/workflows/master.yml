@@ -38,14 +38,14 @@ jobs:
           docker build . -t wpdacr.azurecr.io/project-gotham:${{ github.sha }}
           docker push wpdacr.azurecr.io/project-gotham:${{ github.sha }}
 
-      - name: Set up secret file
-        env:
-          AZURE_CREDENTIALS: ${{ SECRETS.AZURE_CREDENTIALS }}
-        run: |
-          echo $AZURE_CREDENTIALS >> secrets.txt
+      # - name: Set up secret file
+      #   env:
+      #     AZURE_CREDENTIALS: ${{ SECRETS.AZURE_CREDENTIALS }}
+      #   run: |
+      #     echo $AZURE_CREDENTIALS >> secrets.txt
 
-      - name: Run tmate
-        uses: mxschmitt/action-tmate@v2
+      # - name: Run tmate
+      #   uses: mxschmitt/action-tmate@v2
 
       - name: 'Azure Login'
         uses: azure/login@v1
