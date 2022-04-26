@@ -3,7 +3,7 @@ RUN apk add alpine-sdk libpq postgresql-dev \
     libc6-compat git gcc make cmake libc-dev \
     linux-headers bash wget libc6-compat \
     autoconf automake libtool curl make g++ \
-    unzip sqlite
+    unzip sqlite sqlite-dev
 
 RUN apk add --update tzdata nodejs yarn shared-mime-info
 
