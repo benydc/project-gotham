@@ -24,4 +24,6 @@ ADD . /usr/src/app
 RUN yarn install --check-files
 RUN yarn upgrade
 
+ENTRYPOINT ["bin/docker-entrypoint"]
+
 CMD ["bundle", "exec", "rails", "s"]
